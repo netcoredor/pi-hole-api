@@ -682,6 +682,78 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Add domain to allow list",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?list=white&add=goodsite.com&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "list",
+							"value": "white"
+						},
+						{
+							"key": "add",
+							"value": "goodsite.com"
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add domain to deny list",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?list=black&add=badsite.com&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "list",
+							"value": "black"
+						},
+						{
+							"key": "add",
+							"value": "badsite.com"
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
