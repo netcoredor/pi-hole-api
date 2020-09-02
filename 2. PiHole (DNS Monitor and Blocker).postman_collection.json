@@ -1,0 +1,710 @@
+{
+	"info": {
+		"_postman_id": "",
+		"name": "2. PiHole (DNS Monitor and Blocker)",
+		"description": "Reference: https://discourse.pi-hole.net/t/pi-hole-api/1863",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get version (no auth)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?version",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "version",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Summary statistics info in raw format (no auth)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?summaryRaw",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "summaryRaw",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Summary info  formatted (no auth)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?summary",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "summary",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Backend type (no auth)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?type",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stats data last 10 minutes (no auth)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?overTimeData10mins",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "overTimeData10mins",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get recentBlocked (no auth)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?recentBlocked",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "recentBlocked",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get top 10 items list (auth req)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?topItems=10&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "topItems",
+							"value": "10"
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get query sources (auth req)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?getQuerySources=100&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "getQuerySources",
+							"value": "100"
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top Blocked Sources",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?topClientsBlocked&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "topClientsBlocked",
+							"value": null
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top Queries and Ads",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?topItems&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "topItems",
+							"value": null
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top Clients",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?topClients&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "topClients",
+							"value": null
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get query type percentages",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?getQueryTypes&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "getQueryTypes",
+							"value": null
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get query sources",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?getQuerySources=100&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "getQuerySources",
+							"value": "100"
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all queries (auth req)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?getAllQueries&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "getAllQueries",
+							"value": null
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forward Destinations percentages",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?getForwardDestinations&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "getForwardDestinations",
+							"value": null
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get top 100 queries with time and client requesting info (auth req)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?getAllQueries=100&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "getAllQueries",
+							"value": "100"
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get forwarding destinations count (auth req)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?getForwardDestinations=10&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "getForwardDestinations",
+							"value": "10"
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get count of query types (auth req)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?getQueryTypes=10&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "getQueryTypes",
+							"value": "10"
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Over Time Data Clients",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?overTimeDataClients&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "overTimeDataClients",
+							"value": null
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get cache info",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?getCacheInfo&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "getCacheInfo",
+							"value": null
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enable blocking (auth req)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?enable&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "enable",
+							"value": null
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Disable blocking (auth req)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{piholeserver}}/admin/api.php?disable&auth={{piHoleKey}}",
+					"protocol": "http",
+					"host": [
+						"{{piholeserver}}"
+					],
+					"path": [
+						"admin",
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "disable",
+							"value": null
+						},
+						{
+							"key": "auth",
+							"value": "{{piHoleKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
